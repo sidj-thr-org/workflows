@@ -23,4 +23,4 @@ jobs:
       - name: Publish to NPM
         run: |
           echo "print length of NPM_TOKEN: ${#NPM_TOKEN}"
-          echo "nice"
+
