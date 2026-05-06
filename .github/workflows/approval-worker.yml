@@ -53,7 +53,7 @@ jobs:
             core.setFailed('This action is triggered by a fork repo PR and pull_request_review event - which is why the approval check worker fails. Please add a review comment on the PR to trigger this action properly');
 
   check-approvals:
-    needs: [run-when-command, check-prerequisites]
+    needs: check-prerequisites
     permissions:
       contents: write
       pull-requests: write
