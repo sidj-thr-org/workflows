@@ -1,0 +1,22 @@
+name: PR Target Label Context Demo
+
+on:
+  pull_request_target:
+    types: [labeled]
+
+permissions:
+  contents: read
+  pull-requests: read
+
+jobs:
+  show-context:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+    steps:
+      - name: Print trigger and repository context
+        env:
+          TEST_TOKEN: ${{ secrets.TEST_TOKEN }}
+        run: |
+          echo "Length of TEST_TOKEN: ${#TEST_TOKEN}"
